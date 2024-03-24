@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  @apply text-sm;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -35,6 +36,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-antonio);
+}
+.container-x {
+  @apply mx-auto w-full max-w-7xl px-5;
 }
 @layer utilities {
   .text-balance {
