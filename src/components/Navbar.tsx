@@ -2,26 +2,16 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const sidebarRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as HTMLElement)
-      ) {
-        setMenuOpen(false);
-      }
-    };
+  const [menuOpen, setMenuOpen] = useState(true);
 
-    document.addEventListener("mousedown", handleClickOutside);
+  const handleClose = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (e.target === e.currentTarget) {
+      if (menuOpen) setMenuOpen(false);
+    }
+  };
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
   return (
     <header className="z-10">
       <nav className="container-x grid grid-cols-2 md:grid-cols-3 gap-5 items-center">
@@ -67,29 +57,36 @@ const Navbar = () => {
         </div>
       </nav>
       <div
-        ref={sidebarRef}
         className={cn(
-          "fixed flex top-0 right-0 min-h-screen w-full max-w-80 md:max-w-sm transition duration-500 ease-in-out  bg-gray-900",
-          menuOpen ? "translate-x-0 delay-300" : "translate-x-full delay-0"
+          "w-full min-h-screen bg-black/50 fixed inset-0 transition duration-500 ease-in-out",
+          menuOpen ? "opacity-100" : " opacity-0 pointer-events-none"
         )}
+        onClick={handleClose}
       >
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="w-10 h-10 flex flex-col justify-center absolute top-2 right-2"
+        <div
+          className={cn(
+            "fixed flex top-0 right-0 min-h-screen w-full max-w-80 md:max-w-sm transition duration-500 ease-in-out  bg-gray-900",
+            menuOpen ? "translate-x-0 delay-300" : "translate-x-full delay-0"
+          )}
         >
-          <span
-            className={cn(
-              "w-10 h-[2px] transition duration-400 ease-in-out bg-white block ",
-              menuOpen ? " rotate-45 translate-y-[3px]" : "mb-2"
-            )}
-          ></span>
-          <span
-            className={cn(
-              "w-10 h-[2px] transition duration-[400ms] ease-in-out bg-white block",
-              menuOpen ? " -rotate-45 " : ""
-            )}
-          ></span>
-        </button>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="w-10 h-10 flex flex-col justify-center absolute top-2 right-2"
+          >
+            <span
+              className={cn(
+                "w-10 h-[2px] transition duration-400 ease-in-out bg-white block ",
+                menuOpen ? " rotate-45 translate-y-[3px]" : "mb-2"
+              )}
+            ></span>
+            <span
+              className={cn(
+                "w-10 h-[2px] transition duration-[400ms] ease-in-out bg-white block",
+                menuOpen ? " -rotate-45 " : ""
+              )}
+            ></span>
+          </button>
+        </div>
       </div>
     </header>
   );
