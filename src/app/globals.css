@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --fluid-size: clamp(2.25rem, 11.25vw + 0rem, 4.5rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,6 +40,10 @@ h6 {
 }
 .container-x {
   @apply mx-auto w-full max-w-7xl px-5;
+}
+.fluid-text {
+  font-size: clamp(2.25rem, 11.25vw + 0rem, 4.5rem);
+  line-height: 110%;
 }
 @layer utilities {
   .text-balance {

@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen pt-10">
+    <section className="md:min-h-screen pt-10">
       <div className="container-x flex justify-between h-full items-center">
-        <h1 className="text-7xl font-bold">
+        <h1 className="fluid-text sm:text-7xl font-bold">
           Modern <br /> Architecture
         </h1>
         <ul>
@@ -15,10 +15,10 @@ const Hero = () => {
         </ul>
       </div>
       <Image
-        className="-mt-10 mx-auto"
+        className="mt-5 sm:-mt-5 md:-mt-10 mx-auto"
         src={"/section/black-building-with-car.png"}
         width={1260}
-        height={630}
+        height={680}
         alt="black building with car"
       />
     </section>
