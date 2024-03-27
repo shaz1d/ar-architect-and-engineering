@@ -2,7 +2,7 @@ import SectionHeader from "../ui/SectionHeader";
 
 const Achivement = () => {
   return (
-    <section className="overflow-x-hidden py-10 sm:py-20">
+    <section className="overflow-x-hidden my-10 sm:my-20">
       <div className="container-x">
         <SectionHeader letter="A" title="About Us" />
         <div className="grid md:grid-cols-3 gap-10 mt-10">
