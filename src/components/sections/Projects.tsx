@@ -25,14 +25,14 @@ const Projects = () => {
               <Button href="/" title="View Project" />
             </div>
           </div>
-          <div className="overflow-hidden relative w-full aspect-[8/6]">
+          <div className="overflow-hidden relative w-full aspect-[8/6] group/project">
             <Image
               className="-z-10 object-cover object-center"
               src={"/section/house.jpg"}
               alt=""
               fill
             />
-            <div className="w-full py-6 bg-black absolute bottom-0 ">
+            <div className="w-full py-6 bg-black transition duration-300 ease-in-out absolute bottom-0 translate-y-full group-hover/project:translate-y-0">
               <p className="mb-4">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Eveniet quo corrupti illum minus eligendi consequuntur doloribus
@@ -42,6 +42,9 @@ const Projects = () => {
               <Button href="/" title="View Project" />
             </div>
           </div>
+        </div>
+        <div className="mt-8 flex flex-col items-center justify-center">
+          <Button title="View All Projects" href="/projects" />
         </div>
       </div>
     </section>
