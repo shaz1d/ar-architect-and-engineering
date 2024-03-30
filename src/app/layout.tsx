@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Antonio, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "boxicons/css/boxicons.min.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 const antonio = Antonio({
