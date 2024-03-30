@@ -26,7 +26,7 @@ const Services = () => {
           </div>
 
           <div className="md:col-span-4">
-            <h2 className="text-4xl">Why Choose Us</h2>
+            <h2 className="text-4xl uppercase">Why Choose Us</h2>
             <div className="grid sm:grid-cols-2 gap-10 mt-10">
               <div>
                 <h4 className="text-xl mb-3">Feature</h4>
