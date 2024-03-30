@@ -4,6 +4,7 @@ import "./globals.css";
 import "boxicons/css/boxicons.min.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const antonio = Antonio({
   subsets: ["latin"],
   variable: "--font-antonio",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
