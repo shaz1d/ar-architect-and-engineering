@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Button from "./ui/Button";
+import { docsConfig } from "@/config/docs";
 
 const Footer = () => {
+  const { contactInfo } = docsConfig;
   return (
     <footer className="overflow-x-hidden my-10 sm:my-20">
       <div className="container-x">
@@ -25,15 +27,19 @@ const Footer = () => {
             </p>
             <div className="grid sm:grid-cols-2 gap-10">
               <div>
-                <p className="text-lg font-bold mb-4">Find Us</p>
-                <div>
-                  <p>Email</p>
-                  <p>info@ararchitect.com</p>
+                <p className="text-lg font-bold mb-8">Find Us</p>
+                <div className="flex flex-col gap-5">
+                  {contactInfo.map((contact, index) => (
+                    <div key={index}>
+                      <p className="font-medium">{contact.name}</p>
+                      <p className="text-gray-400 text-sm">{contact.value}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
-                <p className="text-lg font-bold mb-4">Useful Links</p>
-                <ul>
+                <p className="text-lg font-bold mb-8">Useful Links</p>
+                <ul className="flex flex-col gap-3">
                   <li>
                     <Link href="/">Home</Link>
                   </li>
