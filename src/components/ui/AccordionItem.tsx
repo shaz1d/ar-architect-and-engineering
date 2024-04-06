@@ -11,10 +11,12 @@ const AccordionItem = ({ title, children }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b pb-5 pt-3 border-white w-full">
-      <div className="flex gap-5 justify-between items-center">
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex gap-5 justify-between items-center cursor-pointer"
+      >
         <h3 className="text-xl font-light">{title}</h3>
         <i
-          onClick={() => setIsOpen(!isOpen)}
           className={cn(
             "bx  text-2xl shrink-0 transition duration-200 ease-out",
             isOpen ? "bx-minus" : "bx-plus"
