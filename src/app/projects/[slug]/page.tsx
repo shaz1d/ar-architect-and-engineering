@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import Image from "next/image";
 import React from "react";
 
@@ -79,6 +80,25 @@ const SingleProject = (props: Props) => {
           </div>
         </div>
       </section>
+      <section className="border-t border-gray-400 pt-16">
+        <div className="container-x">
+          <p className="text-md font-semibold mb-10">Project Gallery</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => {
+              return (
+                <Image
+                  key={i}
+                  className="object-cover object-center"
+                  src={"/section/house.jpg"}
+                  alt=""
+                  width={600}
+                  height={200}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
       <section className="my-10  sm:my-20  border-b border-t border-gray-400 py-16">
         <div className="container-x">
           <p className="text-md font-semibold mb-10">The Result</p>
@@ -102,6 +122,56 @@ const SingleProject = (props: Props) => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="overflow-x-hidden my-10 sm:my-16">
+        <div className="container-x">
+          <p className="text-md font-semibold mb-10">Similar Projects</p>
+          <div className="grid grid-cols-2 gap-10">
+            <div className="overflow-hidden relative w-full aspect-[8/6] group/project">
+              <Image
+                className="-z-10 object-cover object-center"
+                src={"/section/house.jpg"}
+                alt=""
+                fill
+              />
+              <div className="w-full py-6 bg-black transition duration-300 ease-in-out absolute bottom-0 translate-y-full group-hover/project:translate-y-0">
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eveniet quo corrupti illum minus eligendi consequuntur
+                  doloribus impedit iusto nobis porro. Vitae, illum placeat!
+                  Cumque natus dolorem dolores ratione fugit. Molestias.
+                </p>
+                <Button href="/" title="View Project" />
+              </div>
+            </div>
+            <div className="overflow-hidden relative w-full aspect-[8/6] group/project">
+              <Image
+                className="-z-10 object-cover object-center"
+                src={"/section/house.jpg"}
+                alt=""
+                fill
+              />
+              <div className="w-full py-6 bg-black transition duration-300 ease-in-out absolute bottom-0 translate-y-full group-hover/project:translate-y-0">
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eveniet quo corrupti illum minus eligendi consequuntur
+                  doloribus impedit iusto nobis porro. Vitae, illum placeat!
+                  Cumque natus dolorem dolores ratione fugit. Molestias.
+                </p>
+                <Button href="/" title="View Project" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="my-10  sm:my-20  border-b border-t border-gray-400 py-16">
+        <div className="container-x flex flex-col items-center justify-center gap-10">
+          <h2 className="text-6xl md:text-8xl capitalize max-w-[700px] text-center">
+            Want to start a project?
+          </h2>
+          <Button href="/contact" title="Let's Talk" />
         </div>
       </section>
     </>
