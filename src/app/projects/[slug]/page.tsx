@@ -1,10 +1,16 @@
 import Button from "@/components/ui/Button";
+import { getProject } from "@/lib/data";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-const SingleProject = (props: Props) => {
+const SingleProject = async ({ params }: Props) => {
+  const project = await getProject(params.slug);
   return (
     <>
       <section className=" my-10 sm:my-20">
@@ -12,9 +18,11 @@ const SingleProject = (props: Props) => {
           <div className="flex gap-8 justify-between items-end">
             <div>
               <p className="font-medium capitalize mb-2 max-w-80">
-                Combine state of the art technology with in house experience
+                {project.subTitle}
               </p>
-              <h2 className="text-4xl sm:text-7xl uppercase">Investate</h2>
+              <h2 className="text-4xl sm:text-7xl uppercase">
+                {project.title}
+              </h2>
             </div>
             <p className=" shrink-0 flex items-center">
               Scroll to Explore <i className="bx bx-chevrons-down bx-md"></i>
@@ -26,7 +34,7 @@ const SingleProject = (props: Props) => {
         <div className="container-x">
           <Image
             className=" object-cover object-center h-[600px]"
-            src={"/section/house.jpg"}
+            src={project.thumbnail}
             width={1920}
             height={600}
             alt="House"
@@ -54,28 +62,11 @@ const SingleProject = (props: Props) => {
               </ul>
             </div>
             <div>
-              <p className="text-2xl font-medium">
-                The real estate industry is experiencing rapid changes due to
-                new technology and an influx of capital lorem ipsum dolor
-              </p>
+              <p className="text-2xl font-medium">{project.overview}</p>
               <h3 className="text-3xl sm:text-4xl uppercase mt-10 mb-5">
                 The Challenge
               </h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Cupiditate id soluta hic vero necessitatibus omnis eum natus
-                facilis possimus consequuntur incidunt, dolores, asperiores non
-                autem qui. Officiis, alias maiores inventore officia neque
-                architecto impedit vel fuga accusantium sint animi praesentium
-                earum voluptas vitae aperiam similique optio, distinctio culpa
-                nihil deleniti. Maiores unde tempora ad totam minus
-                necessitatibus libero praesentium hic? Lorem ipsum dolor sit,
-                amet consectetur adipisicing elit. Nulla dolores deserunt,
-                ratione eos, labore odio ea temporibus doloremque cupiditate
-                voluptates ut incidunt perferendis sequi repellendus id omnis
-                excepturi commodi provident ad harum maiores. Iure laborum iusto
-                nemo, dolore ipsum facilis!
-              </p>
+              <p>{project.challenge}</p>
             </div>
           </div>
         </div>
@@ -112,14 +103,7 @@ const SingleProject = (props: Props) => {
               </a>
             </div>
             <div>
-              <p className="text-xl font-medium">
-                The real estate industry is experiencing rapid changes due to
-                new technology and an influx of capital lorem ipsum dolor Lorem
-                ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
-                veniam cupiditate porro ab. Laborum adipisci est quas impedit
-                cumque aliquid nihil molestias eius, nesciunt exercitationem ad
-                officiis ex, illum saepe.
-              </p>
+              <p className="text-xl font-medium">{project.result}</p>
             </div>
           </div>
         </div>
