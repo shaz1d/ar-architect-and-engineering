@@ -2,28 +2,52 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import path from "path";
 import { useState } from "react";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const pathname = usePathname();
   const handleClose = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.target === e.currentTarget) {
       if (menuOpen) setMenuOpen(false);
     }
   };
+  console.log(pathname);
 
   return (
     <header className="z-10">
       <nav className="container-x grid grid-cols-2 md:grid-cols-3 gap-5 items-center">
         <ul className="hidden md:flex gap-6 justify-self-start">
           <li>
-            <Link href={"/about"}>About</Link>
+            <Link
+              className={cn(
+                pathname === "/about" ? "text-white" : "text-gray-400"
+              )}
+              href={"/about"}
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link href={"/services"}>Services</Link>
+            <Link
+              className={cn(
+                pathname === "/services" ? "text-white" : "text-gray-400"
+              )}
+              href={"/services"}
+            >
+              Services
+            </Link>
           </li>
           <li>
-            <Link href={"/projects"}>Projects</Link>
+            <Link
+              className={cn(
+                pathname === "/projects" ? "text-white" : "text-gray-400"
+              )}
+              href={"/projects"}
+            >
+              Projects
+            </Link>
           </li>
         </ul>
         <Link className="my-3 md:justify-self-center" href={"/"}>
