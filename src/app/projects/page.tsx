@@ -1,11 +1,15 @@
+import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import { getProjects } from "@/lib/data";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "An architecture & engineering company",
+};
 
-const Projects = async (props: Props) => {
+const Projects = async () => {
   const projects = await getProjects();
   return (
     <>

@@ -17,7 +17,10 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AR architect & engineering",
+  title: {
+    default: "AR architect & engineering",
+    template: "%s - AR architect & engineering",
+  },
   description: "An architecture & engineering company",
 };
 

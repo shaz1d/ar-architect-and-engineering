@@ -8,6 +8,13 @@ type Props = {
     slug: string;
   };
 };
+export const generateMetadata = async ({ params }: Props) => {
+  const project = await getProject(params.slug);
+  return {
+    title: project.title,
+    description: project.description,
+  };
+};
 
 const SingleProject = async ({ params }: Props) => {
   const project = await getProject(params.slug);

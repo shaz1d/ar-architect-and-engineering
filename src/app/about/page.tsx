@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+export const metadata: Metadata = {
+  title: "About",
+  description: "An architecture & engineering company",
+};
 
-const About = (props: Props) => {
+const About = () => {
   return (
     <>
       <section className="my-10 sm:my-20 ">
