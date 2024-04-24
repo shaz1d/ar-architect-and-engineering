@@ -8,12 +8,10 @@ import Footer from "@/components/Footer";
 const antonio = Antonio({
   subsets: ["latin"],
   variable: "--font-antonio",
-  display: "swap",
 });
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta-sans",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
