@@ -35,5 +35,23 @@ const projectSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+});
+
 export const Project =
   mongoose.models.Project || mongoose.model("Project", projectSchema);
+
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
