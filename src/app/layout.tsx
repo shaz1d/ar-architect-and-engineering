@@ -5,7 +5,6 @@ import "boxicons/css/boxicons.min.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
 const antonio = Antonio({
   subsets: ["latin"],
   variable: "--font-antonio",
@@ -29,17 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html
-        lang="en"
-        className={cn(antonio.variable, plus_jakarta_sans.variable)}
-      >
-        <body>
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html
+      lang="en"
+      className={cn(antonio.variable, plus_jakarta_sans.variable)}
+    >
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+    </html>
   );
 }
