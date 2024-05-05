@@ -1,3 +1,4 @@
+import PageLayout from "@/components/layout/PageLayout";
 import Button from "@/components/ui/Button";
 import { getProject } from "@/lib/data";
 import Image from "next/image";
@@ -19,7 +20,7 @@ export const generateMetadata = async ({ params }: Props) => {
 const SingleProject = async ({ params }: Props) => {
   const project = await getProject(params.slug);
   return (
-    <>
+    <PageLayout>
       <section className=" my-10 sm:my-20">
         <div className="container-x">
           <div className="flex gap-8 justify-between items-end">
@@ -165,7 +166,7 @@ const SingleProject = async ({ params }: Props) => {
           <Button href="/contact" title="Let's Talk" />
         </div>
       </section>
-    </>
+    </PageLayout>
   );
 };
 

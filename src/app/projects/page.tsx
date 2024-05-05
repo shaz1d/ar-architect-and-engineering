@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import { getProjects } from "@/lib/data";
 import Image from "next/image";
 import React from "react";
+import PageLayout from "@/components/layout/PageLayout";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const Projects = async () => {
   const projects = await getProjects();
   return (
-    <>
+    <PageLayout>
       <section className="my-10 sm:my-20 ">
         <div className="container-x">
           <h1 className="text-4xl md:text-6xl">Projects</h1>
@@ -42,7 +43,7 @@ const Projects = async () => {
           </div>
         </div>
       </section>
-    </>
+    </PageLayout>
   );
 };
 

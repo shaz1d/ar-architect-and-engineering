@@ -32,11 +32,7 @@ export default function RootLayout({
       lang="en"
       className={cn(antonio.variable, plus_jakarta_sans.variable)}
     >
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

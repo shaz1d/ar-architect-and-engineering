@@ -1,3 +1,4 @@
+import PageLayout from "@/components/layout/PageLayout";
 import type { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <>
+    <PageLayout>
       <section className="my-10 sm:my-20 ">
         <div className="container-x">
           <p className="text-lg">About</p>
@@ -117,7 +118,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </>
+    </PageLayout>
   );
 };
 
