@@ -12,7 +12,7 @@ const Button = ({ title, href, classname }: Props) => {
     <Link
       className={cn(
         classname,
-        "px-8 py-3 border border-white font-semibold inline-block relative bg-black hover:bg-white hover:text-black transition duration-200 ease-in-out"
+        "px-8 py-3 border border-white font-semibold inline-block relative bg-transparent hover:bg-white hover:text-black transition duration-200 ease-in-out"
       )}
       href={href}
     >

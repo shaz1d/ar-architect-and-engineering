@@ -15,7 +15,7 @@ const AccordionItem = ({ title, children }: Props) => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex gap-5 justify-between items-center cursor-pointer"
       >
-        <h3 className="text-xl font-light">{title}</h3>
+        <p className="text-xl font-medium">{title}</p>
         <i
           className={cn(
             "bx  text-2xl shrink-0 transition duration-200 ease-out",

@@ -5,7 +5,7 @@ import { docsConfig } from "@/config/docs";
 const Footer = () => {
   const { contactInfo } = docsConfig;
   return (
-    <footer className="overflow-x-hidden my-10 sm:my-20">
+    <footer className="overflow-x-hidden pt-20 pb-10 bg-slate-950">
       <div className="container-x">
         <div className="grid sm:grid-cols-2 gap-10">
           <div>
