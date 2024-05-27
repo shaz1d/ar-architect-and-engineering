@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MotionDiv } from "../MotionDiv";
 
 const Hero = () => {
   return (
@@ -14,13 +15,19 @@ const Hero = () => {
           <li>Planning</li>
         </ul>
       </div>
-      <Image
-        className="mt-5 sm:-mt-5 md:-mt-10 mx-auto"
-        src={"/section/black-building-with-car.png"}
-        width={1260}
-        height={680}
-        alt="black building with car"
-      />
+      <MotionDiv
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+      >
+        <Image
+          className="mt-5 sm:-mt-5 md:-mt-10 mx-auto"
+          src={"/section/black-building-with-car.png"}
+          width={1260}
+          height={680}
+          alt="black building with car"
+        />
+      </MotionDiv>
     </section>
   );
 };

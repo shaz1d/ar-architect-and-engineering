@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="en"
       className={cn(antonio.variable, plus_jakarta_sans.variable)}
     >
-      <body>{children}</body>
+      <body className="bg-slate-950">{children}</body>
     </html>
   );
 }
