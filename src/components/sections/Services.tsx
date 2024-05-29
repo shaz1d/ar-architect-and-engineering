@@ -1,18 +1,38 @@
+"use client";
 import Image from "next/image";
 import SectionHeader from "../ui/SectionHeader";
+import { motion } from "framer-motion";
 
 const Services = () => {
+  const services = [
+    "Architecture",
+    "Planning",
+    "Interior Design",
+    "Landscape Architecture",
+    "Visualization",
+    "Presentation",
+  ];
   return (
     <section className="overflow-x-hidden my-10 sm:my-20">
       <div className="container-x">
         <SectionHeader title="Our Services" letter="C" />
         <ul className="mt-10 sm:columns-2 list-disc list-outside pl-10 text-2xl md:text-4xl leading-tight font-medium">
-          <li className="mb-5">Architecture</li>
-          <li className="mb-5">Planning</li>
-          <li className="mb-5">Interior Design</li>
-          <li className="mb-5">Landscape Architecture</li>
-          <li className="mb-5">Visualization</li>
-          <li className="mb-5">Presentation</li>
+          {services.map((item, i) => {
+            return (
+              <motion.li
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { delay: 0.1 * i },
+                }}
+                key={i}
+                className="mb-5"
+              >
+                {item}
+              </motion.li>
+            );
+          })}
         </ul>
 
         <div className="grid grid-cols-1 md:grid-cols-7 gap-12 mt-12">
