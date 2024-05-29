@@ -1,58 +1,67 @@
+import { MotionDiv } from "@/components/MotionDiv";
 import PageLayout from "@/components/layout/PageLayout";
-import React from "react";
 
 const Services = () => {
+  const services = [
+    {
+      name: "Architecture",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+    },
+    {
+      name: "Planning",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+    },
+    {
+      name: "Interior Design",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+    },
+    {
+      name: "Landscape Architecture",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+    },
+    {
+      name: "Visualization",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+    },
+    {
+      name: "Presentation",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+    },
+  ];
   return (
     <PageLayout>
       <section className="my-10 sm:my-20 ">
         <div className="container-x">
-          <p className="text-lg">Services</p>
-          <h1 className="text-3xl sm:text-6xl max-w-xl mt-3 uppercase">
-            Your One Stop Shop for your Project
-          </h1>
+          <MotionDiv
+            initial={{ x: -40, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-lg">Services</p>
+            <h1 className="text-3xl sm:text-6xl max-w-xl mt-3 uppercase">
+              Your One Stop Shop for your Project
+            </h1>
+          </MotionDiv>
+
           <ul className="mt-20 grid sm:grid-cols-2 md:grid-cols-3 gap-16 list-disc list-outside pl-8 text-2xl leading-tight font-medium">
-            <li className="hover:bg-slate-950 transition p-5">
-              <p>Architecture</p>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, harum! Assumenda, odio?
-              </p>
-            </li>
-            <li className="hover:bg-slate-950 transition p-5">
-              <p>Planning</p>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, harum! Assumenda, odio?
-              </p>
-            </li>
-            <li className="hover:bg-slate-950 transition p-5">
-              <p>Interior Design</p>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, harum! Assumenda, odio?
-              </p>
-            </li>
-            <li className="hover:bg-slate-950 transition p-5">
-              <p>Landscape Architecture</p>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, harum! Assumenda, odio?
-              </p>
-            </li>
-            <li className="hover:bg-slate-950 transition p-5">
-              <p>Visualization</p>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, harum! Assumenda, odio?
-              </p>
-            </li>
-            <li className="hover:bg-slate-950 transition p-5">
-              <p>Presentation</p>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, harum! Assumenda, odio?
-              </p>
-            </li>
+            {services.map((item, i) => {
+              return (
+                <li key={i} className="hover:bg-slate-950 transition p-5">
+                  <MotionDiv
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                      transition: { delay: 0.1 * i },
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <p>{item.name}</p>
+                    <p className="text-sm mt-2">{item.desc}</p>
+                  </MotionDiv>
+                </li>
+              );
+            })}
           </ul>
 
           {/* <div className="grid grid-cols-2 md:grid-cols-3 mt-10">
