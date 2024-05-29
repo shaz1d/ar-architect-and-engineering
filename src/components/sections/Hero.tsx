@@ -13,6 +13,7 @@ const Hero = () => {
             x: 0,
             opacity: 1,
           }}
+          viewport={{ once: true }}
           className="fluid-text sm:text-7xl font-bold"
         >
           Modern <br /> Architecture
@@ -27,6 +28,7 @@ const Hero = () => {
                 x: 0,
                 transition: { delay: 0.1 * index },
               }}
+              viewport={{ once: true }}
               key={index}
               className="text-xl font-medium"
             >
@@ -38,6 +40,7 @@ const Hero = () => {
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
       >
         <Image
           className="mt-5 sm:-mt-5 md:-mt-10 mx-auto"

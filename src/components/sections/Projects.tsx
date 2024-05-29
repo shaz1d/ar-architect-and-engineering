@@ -21,6 +21,7 @@ const Projects = async () => {
                   opacity: 1,
                   transition: { delay: 0.1 * i },
                 }}
+                viewport={{ once: true }}
                 key={item._id}
                 className="overflow-hidden relative w-full aspect-[8/6] group/project"
               >

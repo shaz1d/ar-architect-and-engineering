@@ -26,6 +26,7 @@ const Services = () => {
                   opacity: 1,
                   transition: { delay: 0.1 * i },
                 }}
+                viewport={{ once: true }}
                 key={i}
                 className="mb-5"
               >
@@ -36,16 +37,26 @@ const Services = () => {
         </ul>
 
         <div className="grid grid-cols-1 md:grid-cols-7 gap-12 mt-12">
-          <div className="relative h-full min-h-[60vw] md:min-h-0 w-full md:col-span-3">
+          <motion.div
+            initial={{ x: -40, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="relative h-full min-h-[60vw] md:min-h-0 w-full md:col-span-3"
+          >
             <Image
               className="object-cover object-center block"
               src={"/section/house.jpg"}
               fill
               alt="Interior Design of a home"
             />
-          </div>
+          </motion.div>
 
-          <div className="md:col-span-4">
+          <motion.div
+            initial={{ x: 40, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="md:col-span-4"
+          >
             <h2 className="text-4xl uppercase">Why Choose Us</h2>
             <div className="grid sm:grid-cols-2 gap-10 mt-10">
               <div>
@@ -81,7 +92,7 @@ const Services = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -13,6 +13,7 @@ const Achievement = () => {
           <motion.h2
             initial={{ x: -40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             className="text-4xl sm:text-5xl uppercase"
           >
             We believe in quality
@@ -22,6 +23,7 @@ const Achievement = () => {
               <motion.p
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
                 ducimus ea dolorum impedit voluptatum! Ut, explicabo quam!
@@ -32,6 +34,7 @@ const Achievement = () => {
               <motion.p
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1, transition: { delay: 0.1 } }}
+                viewport={{ once: true }}
                 className="mt-5"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
@@ -42,6 +45,7 @@ const Achievement = () => {
             <motion.p
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1, transition: { delay: 0.2 } }}
+              viewport={{ once: true }}
             >
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
               necessitatibus optio enim earum tempore soluta quas illo? Atque
@@ -65,6 +69,7 @@ const Achievement = () => {
                   opacity: 1,
                   transition: { delay: 0.1 * i },
                 }}
+                viewport={{ once: true }}
                 key={i}
                 className="w-max text-center"
               >
