@@ -30,7 +30,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(antonio.variable, plus_jakarta_sans.variable)}
+      className={cn(
+        antonio.variable,
+        plus_jakarta_sans.variable,
+        "scroll-smooth"
+      )}
     >
       <body className="bg-slate-950">{children}</body>
     </html>

@@ -1,3 +1,4 @@
+import { MotionDiv } from "@/components/MotionDiv";
 import PageLayout from "@/components/layout/PageLayout";
 import Button from "@/components/ui/Button";
 import { getProject } from "@/lib/data";
@@ -24,36 +25,57 @@ const SingleProject = async ({ params }: Props) => {
       <section className=" my-10 sm:my-20">
         <div className="container-x">
           <div className="flex gap-8 justify-between items-end">
-            <div>
+            <MotionDiv
+              initial={{ x: -40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
               <p className="font-medium capitalize mb-2 max-w-80">
                 {project.subTitle}
               </p>
               <h2 className="text-4xl sm:text-7xl uppercase">
                 {project.title}
               </h2>
-            </div>
-            <p className=" shrink-0 flex items-center">
-              Scroll to Explore <i className="bx bx-chevrons-down bx-md"></i>
-            </p>
+            </MotionDiv>
+            <MotionDiv
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <a href="#overview" className=" shrink-0 flex items-center">
+                Scroll to Explore <i className="bx bx-chevrons-down bx-md"></i>
+              </a>
+            </MotionDiv>
           </div>
         </div>
       </section>
       <section className="my-10 sm:my-20 border-b border-t border-gray-400 py-16">
         <div className="container-x">
-          <Image
-            className=" object-cover object-center h-[600px]"
-            src={project.thumbnail}
-            width={1920}
-            height={600}
-            alt="House"
-          />
+          <MotionDiv
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              className=" object-cover object-center h-[600px]"
+              src={project.thumbnail}
+              width={1920}
+              height={600}
+              alt="House"
+            />
+          </MotionDiv>
         </div>
       </section>
-      <section className="my-10 sm:my-20">
+      <section id="overview" className="my-10 sm:my-20 scroll-mt-12">
         <div className="container-x">
           <p className="text-md font-semibold mb-10">Overview</p>
           <div className="grid md:grid-cols-2">
-            <div className="max-w-[500px]">
+            <MotionDiv
+              initial={{ x: -40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="max-w-[500px]"
+            >
               <h2 className="text-4xl sm:text-5xl uppercase">
                 The future of real estate investing platform
               </h2>
@@ -68,14 +90,18 @@ const SingleProject = async ({ params }: Props) => {
                   Design
                 </li>
               </ul>
-            </div>
-            <div>
+            </MotionDiv>
+            <MotionDiv
+              initial={{ x: 40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
               <p className="text-2xl font-medium">{project.overview}</p>
               <h3 className="text-3xl sm:text-4xl uppercase mt-10 mb-5">
                 The Challenge
               </h3>
               <p>{project.challenge}</p>
-            </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -83,16 +109,26 @@ const SingleProject = async ({ params }: Props) => {
         <div className="container-x">
           <p className="text-md font-semibold mb-10">Project Gallery</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => {
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => {
               return (
-                <Image
+                <MotionDiv
+                  initial={{ y: 40, opacity: 0 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                    transition: { delay: 0.1 * i },
+                  }}
+                  viewport={{ once: true }}
                   key={i}
-                  className="object-cover object-center"
-                  src={"/section/house.jpg"}
-                  alt=""
-                  width={600}
-                  height={200}
-                />
+                >
+                  <Image
+                    className="object-cover object-center"
+                    src={"/section/house.jpg"}
+                    alt=""
+                    width={600}
+                    height={200}
+                  />
+                </MotionDiv>
               );
             })}
           </div>
@@ -102,17 +138,26 @@ const SingleProject = async ({ params }: Props) => {
         <div className="container-x">
           <p className="text-md font-semibold mb-10">The Result</p>
           <div className="grid md:grid-cols-2">
-            <div className="max-w-[500px]">
+            <MotionDiv
+              initial={{ x: -40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="max-w-[500px]"
+            >
               <h2 className="text-4xl sm:text-5xl uppercase">
                 We make an impact through our work
               </h2>
               <a className="inline-block mt-5" href="/">
                 Visit Website
               </a>
-            </div>
-            <div>
+            </MotionDiv>
+            <MotionDiv
+              initial={{ x: 40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
               <p className="text-xl font-medium">{project.result}</p>
-            </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -121,7 +166,12 @@ const SingleProject = async ({ params }: Props) => {
         <div className="container-x">
           <p className="text-md font-semibold mb-10">Similar Projects</p>
           <div className="grid grid-cols-2 gap-10">
-            <div className="overflow-hidden relative w-full aspect-[8/6] group/project">
+            <MotionDiv
+              initial={{ x: -40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="overflow-hidden relative w-full aspect-[8/6] group/project"
+            >
               <Image
                 className="-z-10 object-cover object-center"
                 src={"/section/house.jpg"}
@@ -137,8 +187,13 @@ const SingleProject = async ({ params }: Props) => {
                 </p>
                 <Button href="/" title="View Project" />
               </div>
-            </div>
-            <div className="overflow-hidden relative w-full aspect-[8/6] group/project">
+            </MotionDiv>
+            <MotionDiv
+              initial={{ x: 40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="overflow-hidden relative w-full aspect-[8/6] group/project"
+            >
               <Image
                 className="-z-10 object-cover object-center"
                 src={"/section/house.jpg"}
@@ -154,17 +209,22 @@ const SingleProject = async ({ params }: Props) => {
                 </p>
                 <Button href="/" title="View Project" />
               </div>
-            </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
       <section className="my-10  sm:my-20  border-b border-t border-gray-400 py-16">
-        <div className="container-x flex flex-col items-center justify-center gap-10">
+        <MotionDiv
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="container-x flex flex-col items-center justify-center gap-10"
+        >
           <h2 className="text-6xl md:text-8xl capitalize max-w-[700px] text-center">
             Want to start a project?
           </h2>
           <Button href="/contact" title="Let's Talk" />
-        </div>
+        </MotionDiv>
       </section>
     </PageLayout>
   );
