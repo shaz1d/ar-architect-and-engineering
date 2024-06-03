@@ -18,7 +18,16 @@ const Navbar = () => {
   return (
     <header className="z-10">
       <nav className="container-x grid grid-cols-2 md:grid-cols-3 gap-5 items-center">
-        <ul className="hidden md:flex gap-6 justify-self-start">
+        <Link className="my-3 md:justify-self-start" href={"/"}>
+          <Image
+            priority
+            src={"/logo/ar-architect-and-engineering.svg"}
+            alt=""
+            height={32}
+            width={120}
+          />
+        </Link>
+        <ul className="hidden md:flex gap-6 justify-self-center">
           <li>
             <Link
               className={cn(
@@ -49,16 +58,18 @@ const Navbar = () => {
               Projects
             </Link>
           </li>
+          <li>
+            <Link
+              className={cn(
+                pathname === "/contact" ? "text-white" : "text-gray-400"
+              )}
+              href={"/contact"}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
-        <Link className="my-3 md:justify-self-center" href={"/"}>
-          <Image
-            priority
-            src={"/logo/ar-architect-and-engineering.svg"}
-            alt=""
-            height={32}
-            width={120}
-          />
-        </Link>
+
         <div className="flex gap-5 items-center justify-self-end">
           <Link href={"tel:+0123456789"}>+0123456789</Link>
           <button
