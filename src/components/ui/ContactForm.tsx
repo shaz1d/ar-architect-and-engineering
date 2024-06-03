@@ -1,13 +1,40 @@
 "use client";
+import { sendMail } from "@/lib/actions";
 import { cn } from "@/lib/utils";
+import { useForm } from "react-hook-form";
 
 type Props = {
   className?: string;
 };
+export type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  service: string;
+};
 
 const ContactForm = ({ className }: Props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    delayError: 500,
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      service: "",
+    },
+  });
+
   return (
     <form
+      onSubmit={handleSubmit(async (data) => {
+        await sendMail(data);
+      })}
       className={cn(
         className,
         "p-6 bg-slate-900 max-w-[500px] grid grid-cols-2 gap-3 mt-8 rounded-lg"
@@ -18,27 +45,33 @@ const ContactForm = ({ className }: Props) => {
         <input
           className="block mt-1 px-4 py-3 text-md w-full text-black rounded-md"
           type="text"
-          name="name"
+          {...register("name", { required: "This field is required" })}
           id="name"
           placeholder="Enter Your Name"
         />
+        {errors.name && (
+          <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
+        )}
       </label>
       <label htmlFor="email">
         Email
         <input
           className="block mt-1 px-4 py-3 text-md w-full text-black rounded-md"
           type="text"
-          name="email"
+          {...register("email", { required: "Email is required" })}
           id="email"
           placeholder="Enter Your Email"
         />
+        {errors.email && (
+          <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
+        )}
       </label>
       <label htmlFor="phone">
         Phone
         <input
           className="block mt-1 px-4 py-3 text-md w-full text-black rounded-md"
           type="tel"
-          name="phone"
+          {...register("phone")}
           id="phone"
           placeholder="Enter Your Phone Number"
         />
@@ -46,7 +79,7 @@ const ContactForm = ({ className }: Props) => {
       <label htmlFor="service">
         Service
         <select
-          name="service"
+          {...register("service")}
           id="service"
           className="block rounded-md px-4 py-3 text-black w-full mt-1"
         >
@@ -63,16 +96,19 @@ const ContactForm = ({ className }: Props) => {
         Message
         <textarea
           className="block mt-1  px-4 py-3 text-md w-full text-black rounded-md"
-          name="message"
+          {...register("message", { required: "This field is required" })}
           id="message"
           cols={20}
           rows={5}
           placeholder="Enter Your Message"
         ></textarea>
+        {errors.message && (
+          <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
+        )}
       </label>
       <div className="col-span-2 mt-1 text-right">
         <input
-          className="px-5 py-3 bg-blue-500 rounded-md font-medium"
+          className="px-5 py-3 bg-blue-500 rounded-md font-medium cursor-pointer"
           type="submit"
           value="Send Message"
         />

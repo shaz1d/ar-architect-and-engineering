@@ -13,7 +13,6 @@ const Navbar = () => {
       if (menuOpen) setMenuOpen(false);
     }
   };
-  console.log(pathname);
 
   return (
     <header className="z-10">
