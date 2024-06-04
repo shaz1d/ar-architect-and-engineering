@@ -2,6 +2,7 @@
 import { sendMail } from "@/lib/actions";
 import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 
 type Props = {
   className?: string;
@@ -18,7 +19,8 @@ const ContactForm = ({ className }: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm({
     delayError: 500,
     defaultValues: {
@@ -33,7 +35,14 @@ const ContactForm = ({ className }: Props) => {
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
-        await sendMail(data);
+        const res = await sendMail(data);
+
+        if (res.status === "200") {
+          toast.success(res.message);
+          reset();
+        } else {
+          toast.error(res.message);
+        }
       })}
       className={cn(
         className,
@@ -107,12 +116,15 @@ const ContactForm = ({ className }: Props) => {
         )}
       </label>
       <div className="col-span-2 mt-1 text-right">
-        <input
-          className="px-5 py-3 bg-blue-500 rounded-md font-medium cursor-pointer"
+        <button
+          className="px-5 py-3 disabled:cursor-not-allowed disabled:text-white/80 bg-blue-500 rounded-md font-medium cursor-pointer"
           type="submit"
-          value="Send Message"
-        />
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </button>
       </div>
+      <Toaster position="bottom-right" />
     </form>
   );
 };
