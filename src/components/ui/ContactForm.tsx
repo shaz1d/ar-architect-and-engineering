@@ -52,7 +52,7 @@ const ContactForm = ({ className }: Props) => {
       <label htmlFor="name">
         Name
         <input
-          className="block mt-1 px-4 py-3 text-md w-full text-black rounded-md"
+          className="block mt-1 px-4 py-3 text-md w-full bg-slate-800 rounded-md"
           type="text"
           {...register("name", { required: "This field is required" })}
           id="name"
@@ -65,7 +65,7 @@ const ContactForm = ({ className }: Props) => {
       <label htmlFor="email">
         Email
         <input
-          className="block mt-1 px-4 py-3 text-md w-full text-black rounded-md"
+          className="block mt-1 px-4 py-3 text-md w-full bg-slate-800 rounded-md"
           type="text"
           {...register("email", { required: "Email is required" })}
           id="email"
@@ -78,7 +78,7 @@ const ContactForm = ({ className }: Props) => {
       <label htmlFor="phone">
         Phone
         <input
-          className="block mt-1 px-4 py-3 text-md w-full text-black rounded-md"
+          className="block mt-1 px-4 py-3 text-md w-full bg-slate-800 rounded-md"
           type="tel"
           {...register("phone")}
           id="phone"
@@ -90,7 +90,7 @@ const ContactForm = ({ className }: Props) => {
         <select
           {...register("service")}
           id="service"
-          className="block rounded-md px-4 py-3 text-black w-full mt-1"
+          className="block rounded-md px-4 py-3 bg-slate-800 w-full mt-1"
         >
           <option value="">-- Select Service --</option>
           <option value="architecture">Architecture</option>
@@ -104,7 +104,7 @@ const ContactForm = ({ className }: Props) => {
       <label htmlFor="message" className="col-span-2">
         Message
         <textarea
-          className="block mt-1  px-4 py-3 text-md w-full text-black rounded-md"
+          className="block mt-1  px-4 py-3 text-md w-full bg-slate-800 rounded-md"
           {...register("message", { required: "This field is required" })}
           id="message"
           cols={20}
@@ -117,7 +117,7 @@ const ContactForm = ({ className }: Props) => {
       </label>
       <div className="col-span-2 mt-1 text-right">
         <button
-          className="px-5 py-3 disabled:cursor-not-allowed disabled:text-white/80 bg-blue-500 rounded-md font-medium cursor-pointer"
+          className="px-5 py-3 disabled:cursor-not-allowed transition duration-200 hover:bg-blue-500 disabled:text-white/80 bg-blue-600 rounded-md font-medium cursor-pointer"
           type="submit"
           disabled={isSubmitting}
         >
