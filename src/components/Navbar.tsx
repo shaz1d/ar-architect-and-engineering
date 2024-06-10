@@ -99,7 +99,7 @@ const Navbar = () => {
       >
         <div
           className={cn(
-            "fixed flex top-0 right-0 min-h-screen w-full max-w-80 md:max-w-sm transition duration-500 ease-in-out  bg-gray-900",
+            "fixed  top-0 right-0 min-h-screen  w-full max-w-80 md:max-w-sm py-12 px-8 transition duration-500 ease-in-out  bg-gray-900",
             menuOpen ? "translate-x-0 delay-300" : "translate-x-full delay-0"
           )}
         >
@@ -120,6 +120,87 @@ const Navbar = () => {
               )}
             ></span>
           </button>
+
+          <Link href={"/"}>
+            <Image
+              src={"/logo/ar-architect-and-engineering.svg"}
+              height={100}
+              width={150}
+              alt="AR-architet-and-engineering logo"
+            />
+          </Link>
+          <div className="hidden md:block border-b border-slate-500 pb-10 mb-10">
+            <p className="mt-16 leading-[180%] mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              asperiores pariatur.
+            </p>
+            <p className="leading-[180%]">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+              unde nobis, recusandae ullam ipsa repellendus optio. Deleniti
+              repellendus suscipit iure?
+            </p>
+          </div>
+
+          <ul className="text-xl flex flex-col md:hidden gap-8 mt-20">
+            <li>
+              <Link
+                className={cn(
+                  pathname === "/about" ? "text-white" : "text-gray-400"
+                )}
+                href={"/about"}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={cn(
+                  pathname === "/services" ? "text-white" : "text-gray-400"
+                )}
+                href={"/services"}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={cn(
+                  pathname === "/projects" ? "text-white" : "text-gray-400"
+                )}
+                href={"/projects"}
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={cn(
+                  pathname === "/contact" ? "text-white" : "text-gray-400"
+                )}
+                href={"/contact"}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+
+          <p className="font-medium text-xl capitalize">
+            Connect to our social
+          </p>
+          <div className="flex gap-8 flex-wrap text-2xl mt-5">
+            <a href="https://facebook.com">
+              <i className="bx bxl-facebook-circle"></i>
+            </a>
+            <a href="https://facebook.com">
+              <i className="bx bxl-whatsapp-square"></i>
+            </a>
+            <a href="https://facebook.com">
+              <i className="bx bxl-instagram-alt"></i>
+            </a>
+            <a href="https://facebook.com">
+              <i className="bx bxl-linkedin-square"></i>
+            </a>
+          </div>
         </div>
       </div>
     </header>
