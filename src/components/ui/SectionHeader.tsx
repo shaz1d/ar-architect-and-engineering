@@ -19,6 +19,7 @@ const SectionHeader = ({ letter, title }: Props) => {
       <motion.p
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once:true}}
         className="pl-14 -mt-3"
       >
         {title}

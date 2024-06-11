@@ -1,7 +1,13 @@
 import { MotionDiv } from "@/components/MotionDiv";
 import PageLayout from "@/components/layout/PageLayout";
 import ContactForm from "@/components/ui/ContactForm";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "An architecture & engineering company",
+};
 
 const Contact = () => {
   return (
