@@ -192,7 +192,7 @@ const Navbar = () => {
               <i className="bx bxl-facebook-circle"></i>
             </a>
             <a href="https://facebook.com">
-              <i className="bx bxl-whatsapp-square"></i>
+              <i className='bx bxl-twitter'></i>
             </a>
             <a href="https://facebook.com">
               <i className="bx bxl-instagram-alt"></i>
