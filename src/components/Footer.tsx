@@ -15,15 +15,13 @@ const Footer = () => {
             <Button title="Contact Us" href="/" />
           </div>
           <div>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Nesciunt, molestias.
-            </p>
-            <p className="mt-3 mb-8">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
-              facilis tempora illo voluptate omnis. Tenetur tempore nam facere
-              nisi. Repellat laudantium nostrum dolorum! Voluptates ex
-              recusandae beatae cumque, non odit?
+            <p className="mb-8">
+              AR-Architect & Engineering is your trusted partner in innovative
+              and sustainable architectural design and planning. <br />
+              <br /> We are committed to delivering exceptional service and
+              creating spaces that inspire. Contact us today to start your next
+              project and experience the difference of working with a dedicated
+              team of professionals.
             </p>
             <div className="grid sm:grid-cols-2 gap-10">
               <div>

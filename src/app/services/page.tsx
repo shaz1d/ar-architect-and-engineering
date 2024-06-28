@@ -10,27 +10,27 @@ const Services = () => {
   const services = [
     {
       name: "Architecture",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+      desc: "We specialize in innovative, sustainable architectural design to create functional and aesthetically pleasing spaces that exceed client expectations.",
     },
     {
       name: "Planning",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+      desc: "Our planning services include thorough site analyses and strategic feasibility studies to ensure successful project execution and viability.",
     },
     {
       name: "Interior Design",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+      desc: "We transform spaces with creative, functional designs that enhance aesthetics and usability, tailored to client lifestyles or brand identities.",
     },
     {
       name: "Landscape Architecture",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+      desc: "Our expertise integrates natural elements with built environments, creating sustainable and visually appealing outdoor spaces.",
     },
     {
       name: "Visualization",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+      desc: "Using advanced techniques, we provide realistic visualizations and virtual tours to help clients visualize projects during the design process.",
     },
     {
       name: "Presentation",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, harum! Assumenda, odio?",
+      desc: "We communicate design concepts effectively through clear, compelling visuals and explanations to align and support project goals.",
     },
   ];
   return (
@@ -43,7 +43,7 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <p className="text-lg">Services</p>
-            <h1 className="text-3xl sm:text-6xl max-w-xl mt-3 uppercase">
+            <h1 className="text-3xl sm:text-6xl  mt-3 uppercase">
               Your One Stop Shop for your Project
             </h1>
           </MotionDiv>
@@ -62,7 +62,7 @@ const Services = () => {
                     viewport={{ once: true }}
                   >
                     <p>{item.name}</p>
-                    <p className="text-sm mt-2">{item.desc}</p>
+                    <p className="text-sm mt-2 leading-[180%]">{item.desc}</p>
                   </MotionDiv>
                 </li>
               );

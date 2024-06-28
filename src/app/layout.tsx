@@ -3,8 +3,6 @@ import { Antonio, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import "boxicons/css/boxicons.min.css";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 const antonio = Antonio({
   subsets: ["latin"],
   variable: "--font-antonio",
@@ -36,7 +34,7 @@ export default function RootLayout({
         "scroll-smooth"
       )}
     >
-      <body className="bg-slate-950">{children}</body>
+      <body className="bg-slate-950 leading-[180%]">{children}</body>
     </html>
   );
 }

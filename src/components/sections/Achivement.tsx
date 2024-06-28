@@ -25,11 +25,12 @@ const Achievement = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                ducimus ea dolorum impedit voluptatum! Ut, explicabo quam!
-                Veniam blanditiis quasi possimus consequuntur pariatur iusto
-                repudiandae numquam inventore temporibus quos maxime ullam
-                rerum, placeat quis aut distinctio quam quod enim sed hic vel.
+                Welcome to AR-Architect & Engineering! We specialize in
+                providing top-notch architecture design and planning services.
+                Our team is dedicated to creating innovative and functional
+                spaces that meet the unique needs of our clients. With a focus
+                on quality and sustainability, we strive to bring your vision to
+                life through meticulous planning and exceptional design.
               </motion.p>
               <motion.p
                 initial={{ y: 40, opacity: 0 }}
@@ -37,9 +38,9 @@ const Achievement = () => {
                 viewport={{ once: true }}
                 className="mt-5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-                quo praesentium excepturi aliquid eius provident deserunt unde
-                magni nam eligendi.
+                Discover the difference that AR-Architect & Engineering can make
+                in your next project. Let us help you create a space that
+                inspires and endures.
               </motion.p>
             </div>
             <motion.p
@@ -47,10 +48,11 @@ const Achievement = () => {
               whileInView={{ y: 0, opacity: 1, transition: { delay: 0.2 } }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-              necessitatibus optio enim earum tempore soluta quas illo? Atque
-              autem enim sunt unde. Id in ad exercitationem! Expedita sint nisi
-              libero.
+              Our experienced architects and engineers work closely with clients
+              from concept to completion, ensuring that every project reflects
+              their style and meets their requirements. Whether it’s
+              residential, commercial, or industrial, we approach each project
+              with a commitment to excellence and attention to detail.
             </motion.p>
           </div>
         </div>

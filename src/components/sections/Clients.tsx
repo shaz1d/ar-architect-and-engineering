@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 const Clients = () => {
   const clients = [
     {
-      name: "Thomas",
-      profession: "Architect",
+      name: "John Smith",
+      profession: "Homeowner",
       image: "/section/house.jpg",
       quote:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam blanditiis harum culpa libero sit commodi cum enim recusandae minus sapiente.",
+        "AR-Architect & Engineering brought our vision to life with their innovative and sustainable design. Our home is beautiful and energy-efficient. We couldn't be happier!",
     },
     {
-      name: "Thomas",
-      profession: "Social Engineer",
+      name: "Dave Charles",
+      profession: "Business Owner",
       image: "/section/house.jpg",
       quote:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam blanditiis harum culpa libero sit commodi cum enim recusandae minus sapiente.",
+        "Their professionalism and attention to detail were outstanding. Our new office space is functional and aesthetically pleasing. Highly recommend their services!",
     },
   ];
   return (
@@ -48,7 +48,11 @@ const Clients = () => {
                   <Image src={item.image} fill alt="house" />
                 </div>
                 <div className="col-span-3 sm:col-span-4 py-10">
-                  <p className=" text-gray-300">{item.quote}</p>
+                  <p className=" text-gray-300">
+                    <span className=" font-bold">&quot;</span>
+                    {item.quote}
+                    <span className="font-bold">&quot;</span>
+                  </p>
                   <p className=" text-lg font-semibold mt-3 ">{item.name}</p>
                   <p className=" text-gray-300">{item.profession}</p>
                 </div>

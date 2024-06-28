@@ -20,9 +20,9 @@ const About = () => {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg">About</p>
-            <h1 className="text-3xl sm:text-6xl max-w-xl mt-3 uppercase ">
-              Your One Stop Shop for your Project
+            <p className="text-lg">About Us</p>
+            <h1 className="text-3xl sm:text-6xl  mt-3 uppercase ">
+              Discover AR-Architect & Engineering
             </h1>
           </MotionDiv>
         </div>
@@ -50,7 +50,7 @@ const About = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-2xl text-center max-w-4xl capitalize mx-auto">
+            <p className="text-2xl text-center max-w-4xl mx-auto">
               Choosing AR Architect & Engineering means choosing a commited
               partner. Our Client-Centric appproach and personalized guidance
               set us apart. we&apos;re your allies on the path to your dream
@@ -94,11 +94,15 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h4 className="text-4xl">01</h4>
-              <p className="font-medium my-3 text-xl">Pioneer in Everything</p>
+              <p className="font-medium my-3 text-xl">
+                Innovation and Sustainability
+              </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Officia sint fuga consequuntur blanditiis hic nam exercitationem
-                odit eveniet cupiditate ex.
+                Our playbook revolves around integrating cutting-edge technology
+                and eco-friendly practices into all our projects. We
+                continuously seek to innovate, pushing architectural boundaries
+                with creative solutions while setting new industry standards for
+                sustainable design.
               </p>
             </MotionDiv>
             <MotionDiv
@@ -106,12 +110,16 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1, transition: { delay: 0.1 } }}
               viewport={{ once: true }}
             >
-              <h4 className="text-4xl">01</h4>
-              <p className="font-medium my-3 text-xl">Pioneer in Everything</p>
+              <h4 className="text-4xl">02</h4>
+              <p className="font-medium my-3 text-xl">
+                Client-Centric Approach
+              </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Officia sint fuga consequuntur blanditiis hic nam exercitationem
-                odit eveniet cupiditate ex.
+                At AR-Architect & Engineering, we prioritize understanding and
+                exceeding our client&apos;s expectations. Our approach
+                emphasizes personalized service and collaborative project
+                management, aiming to build long-term relationships based on
+                trust and client satisfaction.
               </p>
             </MotionDiv>
             <MotionDiv
@@ -120,11 +128,13 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h4 className="text-4xl">01</h4>
-              <p className="font-medium my-3 text-xl">Pioneer in Everything</p>
+              <p className="font-medium my-3 text-xl">Quality and Excellence</p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Officia sint fuga consequuntur blanditiis hic nam exercitationem
-                odit eveniet cupiditate ex.
+                Our commitment to quality and excellence drives everything we
+                do. We uphold meticulous attention to detail, craftsmanship, and
+                rigorous quality control throughout the design process. From
+                concept to completion, we strive for excellence in delivering
+                high-quality architectural solutions.
               </p>
             </MotionDiv>
           </div>
@@ -147,24 +157,28 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="mb-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-              quidem porro dolorem minus in ad quis vel. Magni dignissimos
-              accusantium fuga laborum adipisci exercitationem assumenda odit
-              inventore sequi in, ad explicabo earum deleniti reprehenderit
-              ducimus eos perspiciatis quia voluptates! Aliquam delectus
-              aspernatur quo cupiditate ea est culpa voluptates assumenda nemo
-              distinctio, maiores eos quod laboriosam optio? Harum explicabo
-              possimus sit veritatis debitis sequi velit inventore! Dicta optio
-              magnam maiores iste, quasi cumque libero atque impedit. Nihil
-              blanditiis quaerat veritatis ut!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam, cum dolores, rerum doloremque pariatur, fugiat
-              delectus architecto doloribus distinctio at veniam voluptatum
-              natus. Odit animi excepturi minus dolore inventore aliquid iusto
-              omnis obcaecati, error nisi quaerat molestias facilis asperiores
-              ipsa!
+              At AR-Architect & Engineering, our vision is centered on
+              revolutionizing architectural design through innovation,
+              sustainability, and community impact. We aspire to create spaces
+              that not only meet the functional and aesthetic needs of our
+              clients but also contribute positively to the environment and
+              society at large. <br />
+              We are committed to pushing the boundaries of design by harnessing
+              cutting-edge technology and embracing sustainable practices. This
+              includes integrating renewable energy systems, utilizing
+              eco-friendly materials, and implementing smart building
+              technologies to optimize energy efficiency and minimize
+              environmental footprint.
+              <br />
+              <br />
+              Beyond architecture, our vision extends to fostering lasting
+              relationships with our clients, stakeholders, and the communities
+              where we operate. We believe in the transformative power of
+              thoughtful design to enhance quality of life, promote wellness,
+              and inspire future generations. Through continuous learning,
+              collaboration, and a passion for excellence, we strive to lead by
+              example in shaping a more sustainable and resilient built
+              environment.
             </p>
           </MotionDiv>
         </div>

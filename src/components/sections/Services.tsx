@@ -60,35 +60,33 @@ const Services = () => {
             <h2 className="text-4xl uppercase">Why Choose Us</h2>
             <div className="grid sm:grid-cols-2 gap-10 mt-10">
               <div>
-                <h4 className="text-xl mb-3">Feature</h4>
+                <h4 className="text-xl mb-3">Innovative Design Solutions</h4>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facilis dolor pariatur labore hic aspernatur enim molestias
-                  unde nesciunt saepe quasi?
+                  We deliver cutting-edge designs that blend functionality with
+                  aesthetics, ensuring your project stands out.
                 </p>
               </div>
               <div>
-                <h4 className="text-xl mb-3">Feature</h4>
+                <h4 className="text-xl mb-3">Client-Centric Approach</h4>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facilis dolor pariatur labore hic aspernatur enim molestias
-                  unde nesciunt saepe quasi?
+                  We work closely with you to meet and exceed your expectations,
+                  tailoring our services to your needs.
                 </p>
               </div>
               <div>
-                <h4 className="text-xl mb-3">Feature</h4>
+                <h4 className="text-xl mb-3">Sustainable Practices</h4>
+
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facilis dolor pariatur labore hic aspernatur enim molestias
-                  unde nesciunt saepe quasi?
+                  Our designs incorporate eco-friendly materials and
+                  energy-efficient solutions for environmentally responsible
+                  projects.
                 </p>
               </div>
               <div>
-                <h4 className="text-xl mb-3">Feature</h4>
+                <h4 className="text-xl mb-3">Comprehensive Services</h4>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facilis dolor pariatur labore hic aspernatur enim molestias
-                  unde nesciunt saepe quasi?
+                  We offer a full range of services from concept to completion,
+                  ensuring a seamless and efficient process.
                 </p>
               </div>
             </div>

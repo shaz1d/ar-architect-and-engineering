@@ -1,8 +1,9 @@
 import { MotionDiv } from "@/components/MotionDiv";
 import PageLayout from "@/components/layout/PageLayout";
 import Button from "@/components/ui/Button";
-import { getProject } from "@/lib/data";
+import { getProject, getProjects } from "@/lib/data";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -20,6 +21,8 @@ export const generateMetadata = async ({ params }: Props) => {
 
 const SingleProject = async ({ params }: Props) => {
   const project = await getProject(params.slug);
+  const Projects = await getProjects();
+  const similarProjects = Projects.filter((el) => el.id !== project.id);
   return (
     <PageLayout>
       <section className=" my-10 sm:my-20">
@@ -30,12 +33,18 @@ const SingleProject = async ({ params }: Props) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
             >
-              <p className="font-medium capitalize mb-2 max-w-80">
-                {project.subTitle}
-              </p>
-              <h2 className="text-4xl sm:text-7xl uppercase">
+              <Link
+                href="/projects"
+                className="capitalize font-semibold text-lg flex items-center gap-2"
+              >
+                <i className="bx bx-arrow-back bx-sm"></i>Go back
+              </Link>
+              <h2 className="text-4xl sm:text-7xl uppercase mt-8">
                 {project.title}
               </h2>
+              <p className="font-medium capitalize mt-4 text-base max-w-80">
+                {project.subTitle}
+              </p>
             </MotionDiv>
             <MotionDiv
               initial={{ y: 40, opacity: 0 }}
@@ -77,7 +86,7 @@ const SingleProject = async ({ params }: Props) => {
               className="max-w-[500px]"
             >
               <h2 className="text-4xl sm:text-5xl uppercase">
-                The future of real estate investing platform
+                {project.subTitle}
               </h2>
               <ul className="flex gap-2 flex-wrap mt-5 max-w-52">
                 <li className="px-3 rounded-full pb-[2px] bg-white text-black">
@@ -96,7 +105,7 @@ const SingleProject = async ({ params }: Props) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
             >
-              <p className="text-2xl font-medium">{project.overview}</p>
+              <p className="text-xl font-medium">{project.overview}</p>
               <h3 className="text-3xl sm:text-4xl uppercase mt-10 mb-5">
                 The Challenge
               </h3>
@@ -145,11 +154,8 @@ const SingleProject = async ({ params }: Props) => {
               className="max-w-[500px]"
             >
               <h2 className="text-4xl sm:text-5xl uppercase">
-                We make an impact through our work
+                We successfully completed the project
               </h2>
-              <a className="inline-block mt-5" href="/">
-                Visit Website
-              </a>
             </MotionDiv>
             <MotionDiv
               initial={{ x: 40, opacity: 0 }}
@@ -166,50 +172,31 @@ const SingleProject = async ({ params }: Props) => {
         <div className="container-x">
           <p className="text-md font-semibold mb-10">Similar Projects</p>
           <div className="grid grid-cols-2 gap-10">
-            <MotionDiv
-              initial={{ x: -40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className="overflow-hidden relative w-full aspect-[8/6] group/project"
-            >
-              <Image
-                className="-z-10 object-cover object-center"
-                src={"/section/house.jpg"}
-                alt=""
-                fill
-              />
-              <div className="w-full py-6 bg-black transition duration-300 ease-in-out absolute bottom-0 translate-y-full group-hover/project:translate-y-0">
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Eveniet quo corrupti illum minus eligendi consequuntur
-                  doloribus impedit iusto nobis porro. Vitae, illum placeat!
-                  Cumque natus dolorem dolores ratione fugit. Molestias.
-                </p>
-                <Button href="/" title="View Project" />
-              </div>
-            </MotionDiv>
-            <MotionDiv
-              initial={{ x: 40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className="overflow-hidden relative w-full aspect-[8/6] group/project"
-            >
-              <Image
-                className="-z-10 object-cover object-center"
-                src={"/section/house.jpg"}
-                alt=""
-                fill
-              />
-              <div className="w-full py-6 bg-black transition duration-300 ease-in-out absolute bottom-0 translate-y-full group-hover/project:translate-y-0">
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Eveniet quo corrupti illum minus eligendi consequuntur
-                  doloribus impedit iusto nobis porro. Vitae, illum placeat!
-                  Cumque natus dolorem dolores ratione fugit. Molestias.
-                </p>
-                <Button href="/" title="View Project" />
-              </div>
-            </MotionDiv>
+            {similarProjects.map((elm, i) => {
+              return (
+                <MotionDiv
+                  key={i}
+                  initial={{ x: -40, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="overflow-hidden relative w-full aspect-[8/6] group/project"
+                >
+                  <Image
+                    className="-z-10 object-cover object-center"
+                    src={elm.thumbnail}
+                    alt=""
+                    fill
+                  />
+                  <div className="w-full py-6 bg-black transition duration-300 ease-in-out absolute bottom-0 translate-y-full group-hover/project:translate-y-0">
+                    <p className="mb-4">{elm.subTitle}</p>
+                    <Button
+                      href={`/projects/${elm.slug}`}
+                      title="View Project"
+                    />
+                  </div>
+                </MotionDiv>
+              );
+            })}
           </div>
         </div>
       </section>

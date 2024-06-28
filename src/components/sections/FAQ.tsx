@@ -5,29 +5,29 @@ import SectionHeader from "../ui/SectionHeader";
 const FAQ = () => {
   const faqs = [
     {
-      question: "Corporis illum nam assumenda beatae, ipsummaiores?",
+      question: "What services do you offer?",
       answer:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,magnam repellat. Corporis illum nam assumenda beatae, ipsummaiores, facilis odit aspernatur repellat rem ex cum optio, fugitfuga explicabo eligendi.",
+        "We offer a wide range of services including site analysis, feasibility studies, architectural design, project management, and sustainable design solutions.",
     },
     {
-      question: "Corporis illum nam assumenda beatae, ipsummaiores?",
+      question: "How do you ensure the sustainability of your projects?",
       answer:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,magnam repellat. Corporis illum nam assumenda beatae, ipsummaiores, facilis odit aspernatur repellat rem ex cum optio, fugitfuga explicabo eligendi.",
+        "We integrate eco-friendly materials, energy-efficient systems, and sustainable practices into our designs to minimize environmental impact and promote long-term efficiency.",
     },
     {
-      question: "Corporis illum nam assumenda beatae, ipsummaiores?",
+      question: "What is your design process like?",
       answer:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,magnam repellat. Corporis illum nam assumenda beatae, ipsummaiores, facilis odit aspernatur repellat rem ex cum optio, fugitfuga explicabo eligendi.",
+        "Our design process involves an initial consultation, site analysis, concept development, detailed design, and project management. We collaborate closely with our clients at every stage to ensure their vision is realized.",
     },
     {
-      question: "Corporis illum nam assumenda beatae, ipsummaiores?",
+      question: "Do you handle residential and commercial projects?",
       answer:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,magnam repellat. Corporis illum nam assumenda beatae, ipsummaiores, facilis odit aspernatur repellat rem ex cum optio, fugitfuga explicabo eligendi.",
+        "Yes, we have extensive experience in both residential and commercial projects. Our team is equipped to handle a variety of project types and scales.",
     },
     {
-      question: "Corporis illum nam assumenda beatae, ipsummaiores?",
+      question: "How can I get started on my project?",
       answer:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,magnam repellat. Corporis illum nam assumenda beatae, ipsummaiores, facilis odit aspernatur repellat rem ex cum optio, fugitfuga explicabo eligendi.",
+        "You can start by contacting us via phone or email to schedule an initial consultation. We’ll discuss your ideas, requirements, and provide you with a tailored plan to move forward.",
     },
   ];
   return (
