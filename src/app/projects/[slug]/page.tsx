@@ -118,7 +118,7 @@ const SingleProject = async ({ params }: Props) => {
         <div className="container-x">
           <p className="text-md font-semibold mb-10">Project Gallery</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => {
+            {[1, 2, 3, 4, 5, 6].map((_, i) => {
               return (
                 <MotionDiv
                   initial={{ y: 40, opacity: 0 }}
@@ -132,7 +132,7 @@ const SingleProject = async ({ params }: Props) => {
                 >
                   <Image
                     className="object-cover object-center"
-                    src={"/section/house.jpg"}
+                    src={`/projects/${i + 1}.webp`}
                     alt=""
                     width={600}
                     height={200}
