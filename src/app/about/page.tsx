@@ -50,7 +50,7 @@ const About = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-2xl text-center max-w-4xl mx-auto">
+            <p className=" text-lg sm:text-2xl text-center max-w-4xl mx-auto">
               Choosing AR Architect & Engineering means choosing a commited
               partner. Our Client-Centric appproach and personalized guidance
               set us apart. we&apos;re your allies on the path to your dream
@@ -66,12 +66,12 @@ const About = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl uppercase">
+            <h2 className="text-4xl sm:text-5xl uppercase">
               Explore Our <br /> company playbook
             </h2>
-            <div className="grid grid-cols-7 h-[450px] gap-6 mt-8 overflow-hidden">
+            <div className="grid sm:grid-cols-7 h-[450px] gap-6 mt-8 overflow-hidden">
               <Image
-                className=" col-span-2 h-full object-cover "
+                className="hidden sm:block col-span-2 h-full object-cover "
                 src={"/section/two-architect-with-laptop.jpg"}
                 width={400}
                 height={400}
@@ -141,13 +141,13 @@ const About = () => {
         </div>
       </section>
       <section className="my-10 sm:my-20">
-        <div className="container-x grid grid-cols-2">
+        <div className="container-x grid sm:grid-cols-2 gap-6">
           <MotionDiv
             initial={{ x: -40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-6xl uppercase max-w-lg">
+            <h2 className="text-4xl sm:text-6xl uppercase max-w-lg">
               What we want to achieve
             </h2>
           </MotionDiv>

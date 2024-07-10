@@ -18,8 +18,8 @@ const Hero = () => {
         >
           Modern <br /> Architecture
         </motion.h1>
-        <ul className="flex flex-col gap-3">
-          <li>Services</li>
+        <ul className="hidden sm:flex flex-col gap-2 md:gap-3">
+          <li className="text-xs">Services</li>
           {["Architecture", "Designing", "Planning"].map((item, index) => (
             <motion.li
               initial={{ opacity: 0, x: 20 }}
@@ -30,7 +30,7 @@ const Hero = () => {
               }}
               viewport={{ once: true }}
               key={index}
-              className="text-xl font-medium"
+              className="text-md md:text-xl font-semibold md:font-medium"
             >
               {item}
             </motion.li>

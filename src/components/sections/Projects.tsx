@@ -11,7 +11,7 @@ const Projects = async () => {
     <section className="overflow-x-hidden my-10 sm:my-20">
       <div className="container-x">
         <SectionHeader title="Our Projects" letter="B" />
-        <div className="grid grid-cols-2 mt-8 gap-10">
+        <div className="grid sm:grid-cols-2 mt-8 gap-10">
           {filteredProjects.map((item, i) => {
             return (
               <MotionDiv

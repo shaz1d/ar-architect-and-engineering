@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import path from "path";
 import { useState } from "react";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -92,8 +91,8 @@ const Navbar = () => {
       </nav>
       <div
         className={cn(
-          "w-full min-h-screen bg-black/50 fixed inset-0 transition duration-500 ease-in-out",
-          menuOpen ? "opacity-100" : " opacity-0 pointer-events-none"
+          "w-full min-h-screen bg-black/50 fixed z-20 inset-0 transition duration-500 ease-in-out",
+          menuOpen ? "opacity-100 " : " opacity-0 pointer-events-none"
         )}
         onClick={handleClose}
       >
@@ -131,17 +130,18 @@ const Navbar = () => {
           </Link>
           <div className="hidden md:block border-b border-slate-500 pb-10 mb-10">
             <p className="mt-16 leading-[180%] mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              asperiores pariatur.
+              AR-Architect & Engineering is your trusted partner in innovative
+              and sustainable architectural design and planning.
             </p>
             <p className="leading-[180%]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
-              unde nobis, recusandae ullam ipsa repellendus optio. Deleniti
-              repellendus suscipit iure?
+              We are committed to delivering exceptional service and creating
+              spaces that inspire. Contact us today to start your next project
+              and experience the difference of working with a dedicated team of
+              professionals.
             </p>
           </div>
 
-          <ul className="text-xl flex flex-col md:hidden gap-8 mt-20">
+          <ul className="text-lg flex flex-col md:hidden gap-6 mt-20 mb-20">
             <li>
               <Link
                 className={cn(
@@ -192,7 +192,7 @@ const Navbar = () => {
               <i className="bx bxl-facebook-circle"></i>
             </a>
             <a href="https://facebook.com">
-              <i className='bx bxl-twitter'></i>
+              <i className="bx bxl-twitter"></i>
             </a>
             <a href="https://facebook.com">
               <i className="bx bxl-instagram-alt"></i>

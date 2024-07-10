@@ -14,7 +14,7 @@ const Contact = () => {
     <PageLayout>
       <section className="my-10 sm:my-20 ">
         <div className="container-x">
-          <div className="grid md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-20 md:gap-0">
             <MotionDiv
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}

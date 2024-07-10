@@ -6,14 +6,14 @@ const Clients = () => {
     {
       name: "John Smith",
       profession: "Homeowner",
-      image: "/section/house.jpg",
+      image: "/clients/client.jpg",
       quote:
         "AR-Architect & Engineering brought our vision to life with their innovative and sustainable design. Our home is beautiful and energy-efficient. We couldn't be happier!",
     },
     {
       name: "Dave Charles",
       profession: "Business Owner",
-      image: "/section/house.jpg",
+      image: "/clients/client 2.jpg",
       quote:
         "Their professionalism and attention to detail were outstanding. Our new office space is functional and aesthetically pleasing. Highly recommend their services!",
     },
@@ -45,7 +45,12 @@ const Clients = () => {
                 className="grid grid-cols-6 gap-5"
               >
                 <div className="col-span-3 sm:col-span-2  relative ">
-                  <Image src={item.image} fill alt="house" />
+                  <Image
+                    className=" object-cover"
+                    src={item.image}
+                    fill
+                    alt="house"
+                  />
                 </div>
                 <div className="col-span-3 sm:col-span-4 py-10">
                   <p className=" text-gray-300">

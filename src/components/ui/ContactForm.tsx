@@ -46,10 +46,10 @@ const ContactForm = ({ className }: Props) => {
       })}
       className={cn(
         className,
-        "p-6 bg-slate-900 max-w-[500px] grid grid-cols-2 gap-3 mt-8 rounded-lg"
+        "p-6 bg-slate-900 max-w-[500px] grid md:grid-cols-2 gap-3 mt-8 rounded-lg mx-auto md:mx-0"
       )}
     >
-      <label htmlFor="name">
+      <label htmlFor="name" className="col-span-2 sm:col-span-1">
         Name
         <input
           className="block mt-1 px-4 py-3 text-md w-full bg-slate-800 rounded-md"
@@ -62,7 +62,7 @@ const ContactForm = ({ className }: Props) => {
           <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
         )}
       </label>
-      <label htmlFor="email">
+      <label htmlFor="email" className="col-span-2 sm:col-span-1">
         Email
         <input
           className="block mt-1 px-4 py-3 text-md w-full bg-slate-800 rounded-md"
@@ -75,7 +75,7 @@ const ContactForm = ({ className }: Props) => {
           <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
         )}
       </label>
-      <label htmlFor="phone">
+      <label htmlFor="phone" className="col-span-2 sm:col-span-1">
         Phone
         <input
           className="block mt-1 px-4 py-3 text-md w-full bg-slate-800 rounded-md"
@@ -85,7 +85,7 @@ const ContactForm = ({ className }: Props) => {
           placeholder="Enter Your Phone Number"
         />
       </label>
-      <label htmlFor="service">
+      <label htmlFor="service" className="col-span-2 sm:col-span-1">
         Service
         <select
           {...register("service")}
